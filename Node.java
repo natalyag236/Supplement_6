@@ -108,6 +108,12 @@ public class Node {
         }
     }
 
+    /**
+     * Dumps the node data to a string with indentation based on the tree depth.
+     * 
+     * @param level The current level of the node in the tree, used for indentation.
+     * @return A string representation of the node and its children.
+     */
     public String dumpNodeString(int level) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < level; i++) {
