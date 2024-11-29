@@ -106,4 +106,23 @@ public class Node {
                 this.right.insert(value);  
             }
         }
-}   }
+    }
+
+    public String dumpNodeString(int level) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            sb.append("\t");
+        }
+
+        sb.append("NodeID: ").append(this.nodeID).append(", Data: ").append(this.data).append("\n");
+
+        if (this.left != null) {
+            sb.append(this.left.dumpNodeString(level + 1));  // Increment the level for left child
+        }
+        if (this.right != null) {
+            sb.append(this.right.dumpNodeString(level + 1));  // Increment the level for right child
+        }
+
+        return sb.toString();
+    }
+}
