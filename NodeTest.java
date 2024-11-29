@@ -35,4 +35,25 @@ public class NodeTest {
         assertEquals(12, root.getRight().getLeft().getData());
         assertEquals(20, root.getRight().getRight().getData());
     }
+
+    @Test
+    public void testDumpNodeToString() {
+        Node root = new Node(10);
+        root.insert(5);
+        root.insert(15);
+        root.insert(3);
+        root.insert(7);
+        root.insert(12);
+        root.insert(20);
+
+        String expectedDump = "NodeID: 0, Data: 10\n"
+                            + "\tNodeID: 1, Data: 5\n"
+                            + "\t\tNodeID: 2, Data: 3\n"
+                            + "\t\tNodeID: 3, Data: 7\n"
+                            + "\tNodeID: 4, Data: 15\n"
+                            + "\t\tNodeID: 5, Data: 12\n"
+                            + "\t\tNodeID: 6, Data: 20\n";
+
+        assertEquals(expectedDump, root.dumpNodeString(0));
+    }
 }
