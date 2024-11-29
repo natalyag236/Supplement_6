@@ -82,18 +82,28 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
+    /**
+ * Inserts a value into the binary search tree.
+ * 
+ * If the value to be inserted is less than the current node's data, it is inserted
+ * into the left subtree. If the value is greater than or equal to the current node's data,
+ * it is inserted into the right subtree. The insertion is done recursively until an appropriate
+ * null child is found, at which point a new node is created and added.
+ * 
+ * @param value the value to be inserted into the tree
+ */
     public void insert(int value) {
         if (value < this.data) {
             if (this.left == null) {
-                this.left = new Node(value);  // Create a new node and assign it to the left child
+                this.left = new Node(value);  
             } else {
-                this.left.insert(value);  // Recursively insert into the left child
+                this.left.insert(value); 
             }
         } else {
             if (this.right == null) {
-                this.right = new Node(value);  // Create a new node and assign it to the right child
+                this.right = new Node(value); 
             } else {
-                this.right.insert(value);  // Recursively insert into the right child
+                this.right.insert(value);  
             }
         }
 }   }
