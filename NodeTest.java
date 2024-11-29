@@ -1,1 +1,14 @@
+import org.junit.Test;
 
+public class NodeTest {
+    @Test
+    public void test_node_IDUniqueness() {
+        Node root = new Node(100);
+        Node leftChild = new Node(200);
+        Node rightChild = new Node(300);
+
+        assertNotEquals(root.getNodeID(), leftChild.getNodeID());
+        assertNotEquals(leftChild.getNodeID(), rightChild.getNodeID());
+        assertNotEquals(root.getNodeID(), rightChild.getNodeID());
+    }
+}
