@@ -82,4 +82,18 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
-}
+    public void insert(int value) {
+        if (value < this.data) {
+            if (this.left == null) {
+                this.left = new Node(value);  // Create a new node and assign it to the left child
+            } else {
+                this.left.insert(value);  // Recursively insert into the left child
+            }
+        } else {
+            if (this.right == null) {
+                this.right = new Node(value);  // Create a new node and assign it to the right child
+            } else {
+                this.right.insert(value);  // Recursively insert into the right child
+            }
+        }
+}   }
